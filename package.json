@@ -1,0 +1,34 @@
+{
+  "name": "nodejs-sender",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc && npm run copy-public",
+    "start": "node dist/index.js",
+    "dev": "env-cmd -f dev.env ts-node-dev --respawn --transpile-only index.ts",
+    "copy-public": "tsc && node -e \"require('shelljs').cp('-r', 'public', 'dist/public')\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EdKo2001/nodejs-sender.git"
+  },
+  "author": "Eduard Koshkelyan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EdKo2001/nodejs-sender/issues"
+  },
+  "homepage": "https://github.com/EdKo2001/nodejs-sender#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "nodemailer": "^6.9.1"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.11",
+    "@types/nodemailer": "^6.4.7",
+    "env-cmd": "^10.1.0",
+    "shelljs": "^0.8.5",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.0.4"
+  }
+}
